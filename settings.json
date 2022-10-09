@@ -1,0 +1,66 @@
+[
+    {
+        "startTime": 20.716666666666665,
+        "duration": 0,
+        "column": 0,
+        "value": 85,
+        "title": "Duty",
+        "id": 709738
+    },
+    {
+        "startTime": 13.283333333333333,
+        "duration": 0,
+        "column": 1,
+        "value": 93,
+        "title": "Duty",
+        "id": 612295
+    },
+    {
+        "startTime": 5.133333333333334,
+        "duration": 0,
+        "column": 2,
+        "value": 60,
+        "title": "Duty",
+        "id": 116629
+    },
+    {
+        "startTime": 13.75,
+        "duration": 0,
+        "column": 3,
+        "value": 17,
+        "title": "Duty",
+        "id": 500306
+    },
+    {
+        "startTime": 9.216666666666667,
+        "duration": 0,
+        "column": 4,
+        "value": 98,
+        "title": "Duty",
+        "id": 300873
+    },
+    {
+        "startTime": 0.5,
+        "duration": 0,
+        "column": 5,
+        "value": 60,
+        "title": "Duty",
+        "id": 171591
+    },
+    {
+        "startTime": 14.5,
+        "duration": 0,
+        "column": 6,
+        "value": 85,
+        "title": "Duty",
+        "id": 481898
+    },
+    {
+        "startTime": 19,
+        "duration": 0,
+        "column": 7,
+        "value": 34,
+        "title": "Duty",
+        "id": 629173
+    }
+]
