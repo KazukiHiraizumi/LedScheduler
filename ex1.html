@@ -1,0 +1,58 @@
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+<div>WebSocket Example</div>
+
+<button id='send'>SEND</button>
+<div id='monitor'></div>
+
+<script type="text/javascript">
+let socket = new WebSocket("ws://localhost:8001");
+socket.onopen = function(e) {
+  console.log("[open] Connection established");
+};
+
+socket.onmessage = function(event) {
+  let resp=JSON.parse(event.data);
+  if(resp.action=='dump'){
+    console.log(`response dump`,JSON.stringify(resp.events));
+    $('#monitor').text(JSON.stringify(resp.events));
+  }
+};
+
+socket.onclose = function(event) {
+  if (event.wasClean) {
+    console.log(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
+  }
+  else {
+    console.log('[close] Connection died');
+  }
+};
+
+socket.onerror = function(error) {
+  console.log(`[error] ${error.message}`);
+};
+
+$(function(){
+  $('#send').click(()=>{
+    let msg={
+      action: 'dump',
+      events: [
+        {
+//          startTime: 7.5,
+          columun:1,
+          value: 50
+        },
+        {
+//         startTime: 12.2,
+         channel:3,
+         value: 90
+        }
+      ]
+    }
+    socket.send(JSON.stringify(msg));
+  });
+});
+
+</script>
+
+</html>
