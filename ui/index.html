@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="jquery-skeduler/jquery.skeduler.css" type="text/css">
+    <link rel="stylesheet" href="jquery-ui-1.13.2/themes/ui-lightness/jquery-ui.min.css">
+    <script src="jquery-ui-1.13.2/external/jquery/jquery.js"></script>
+    <script src="jquery-ui-1.13.2/jquery-ui.min.js"></script>
+    <script src="jquery-skeduler/jquery.skeduler.js"></script>
+    <script src="index.js" type="module"></script>
+
+    <style>
+      .skeduler-container {
+        margin: 0 0 0 100px;
+        width: 1000px;
+        height: 700px;
+        overflow: scroll;
+      }
+      .default-container {
+        margin: 0 0 0 100px;
+        width: 1000px;
+      }
+      h1 {
+        margin: 10px 0 10px 100px;
+       }
+      button {
+        height:50px;
+        width:100px;
+        margin-top:15px;
+        margin-bottom:15px;
+        background-color:#D3E0EF;
+       }
+      .default-icon {
+        height:50px;
+        width:100px;
+        margin-top:15px;
+        margin-bottom:15px;
+        background-color:#D3E0EF;
+        background-repeat:no-repeat;
+        background-position:center;
+        background-size:80px 32px;
+        border:1px dotted;
+       }
+      .default-panel {
+        position:absolute;
+        border:1px dotted;
+        padding:10;
+       }
+    </style>
+  </head>
+  <body>
+    <h1>UV-LED調光スケジューラ</h1>
+    <div id="dialog1" style="display:none;"><p>編集</p></div>
+    <div id="dialog2" style="display:none;"><p>新規</p></div>
+    <div id="header" class="default-container"></div>
+    <div id="skeduler-container"></div>
+    <div id="panel" class="default-container"></div>
+    <div class="default-panel" style="top:100;left:1120;">
+      <button id="file_save" class="default-icon" style="background-image:url(icons/fwrite.png);"></button><br>
+      <button id="file_open" class="default-icon" style="background-image:url(icons/fread.png);"></button><br>
+    </div>
+    <div class="default-panel" style="top:300;left:1120;">
+      <button id="upload" class="default-icon" style="background-image:url(icons/cwrite.png);"></button><br>
+      <button id="download" class="default-icon" style="background-image:url(icons/cread.png);"></button><br>
+<!--      <button id="generate">test/random</button><br>
+      <button id="resume">test/resume</button><br>
+      <button id="save">test/save</button><br>  -->
+    </div>
+    <div class="default-panel" style="top:550;left:1120;">
+      <div id="connect" class="default-icon" style="background-image:url(icons/disconnect.png);"></div>
+    </div>
+  </body>
+</html>
