@@ -3,6 +3,16 @@ import {renderPanel,renderHeading,updatePanel,checkPanel} from "./mod/evmon.js"
 import {openSock} from "./mod/evsock.js"
 import {fsOpen,fsSave} from "./mod/evfs-json.js"
 
+$('button').on('mousedown',function(ev){
+  $(ev.target).css({"transform":"scale(0.9,0.9)"});
+});
+$('button').on('mouseup',function(ev){
+  $(ev.target).css({"transform":"scale(1,1)"});
+});
+$('button').on('mouseleave',function(ev){
+  $(ev.target).css({"transform":"scale(1,1)"});
+});
+
 let appData={
   headers: ['CH0','CH1','CH2','CH3','CH4','CH5','CH6','CH7'],
   cardTemplate: '<div>${value}%</div>',

@@ -1,6 +1,34 @@
-# UV-LED調光スケジューラ 取扱説明
+<style>
+  div > img {
+    display: block;
+    margin: auto auto;
+  }
+</style>
+<div style="float:right"> 2022.12<img src="img/sakana.png" height="25"/></div>
+# UV-LED調光スケジューラ 取扱説明書
 
-## 内容品
+## 目次
+### 1. 納品物一覧
+### 2. 設置
+1. USBケーブルの接続
+2. BNCケーブルの接続
+### 3. システムの起動
+1. ドライバーの起動
+2. ユーザーインタフェースの起動
+### 4. 操作
+1. スケジュールの作成
+2. 操作一覧
+3. 状態表示一覧
+### 5. リモート接続
+### 補足
+1. アナログ出力ボックスのピン割付
+2. 部品リスト
+3. システムブロック図
+
+<div style="page-break-before:always"></div>
+
+----
+## [1] 納品物一覧
 <img src="img/fig1.png" />
 
 |名称|概要|数量|
@@ -10,27 +38,35 @@
 |③USBケーブル|miniB型のUSBケーブルです。PCとアナログ出力ボックスを接続するケーブルです。|2|
 |④BNCケーブル|アナログ出力ボックスとLEDコントローラ(お客様範囲)を接続するケーブルです。|8|
 
-## 接続
+<div style="page-break-before:always"></div>
 
-### USBケーブル
-PCとアナログ出力BOXの間は、2本のUSBケーブルにて下図のように接続します。それぞれ同色のマーカが貼り付けられたポートを接続します。
+----
 
-### BNCケーブル
-アナログ出力ポートの端子台にバラ線を固定します。端子台のピン割付はAppendix.1を参考にしてください。
+## [2] 設置
+### ①USBケーブルの接続
+PCとアナログ出力ボックスの間は、2本のUSBケーブルにて下図のように接続します。それぞれ同色のマーカが貼り付けられたポートを接続します。
+### ②BNCケーブルの接続
+アナログ出力ボックスの端子台にBNCケーブルを固定します。端子台のピン割付はAppendix.1を参考にしてください。
 
-## ドライバーの起動
-  アナログ出力制御を行うソフトウェアを「ドライバー」とよびます。デスクトップアイコン???をクリックし、ドライバーソフトウェアを起動します。起動に成功すると、以下のウィンドウが表示されます。
-  <img src="img/fig3a.png" />
+<div style="page-break-before:always"></div>
+
+----
+
+##  [3] システムの起動
+
+### ①ドライバーの起動
+  アナログ出力制御を行うソフトウェアを「ドライバー」とよびます。
+  <div><img src="img/StartIcon.png" /></div>
+  上のデスクトップアイコンをクリックし、ドライバーソフトウェアを起動します。起動に成功すると、以下のウィンドウが表示されます。
+  <div><img src="img/fig3a.png" /></div>
 <table><tr><td width="80"><img src="img/chuui.png" /><td>
   <img src="img/fig3b.png" style="float:right;"/>
   ドライバーの起動に失敗したときは右のポップアップが表示されます。
   起動に失敗した場合は、アナログ出力BOXのUSB接続を確認し、再起動します。
 </table>
 
-## ユーザインタフェース
-1. ユーザインタフェースの起動
+### ②ユーザインタフェースの起動
   本システムはユーザインタフェースにWebブラウザ<sup>(1)</sup>を用います。ブラウザーを起動し、アドレス **localhost:8000** に接続します。
-2. 画面構成
   接続に成功すると以下の画面が表示されます。
 <img src="img/fig4.png" />
 <table>
@@ -44,10 +80,51 @@ PCとアナログ出力BOXの間は、2本のUSBケーブルにて下図のよ�
 なお強制出力は、ユーザインタフェース(ブラウザー)がこのページから離れると、自動的に解除されます。
 </table>
 <table><tr><td width="80"><img src="img/chuui.png" /><td>
- ドライバーに接続されると、インジケータパネルの接続アイコンが<img src="LedScheduler/ui/icons/connect.png" height="20" />に変わります。接続されないときは、ブラウザーの「更新」ボタンでページを更新してください。
+ ドライバーに接続されると、インジケータパネルの接続アイコンが<img src="icons/connect.png" height="20" />に変わります。接続されないときは、ブラウザーの「更新」ボタンでページを更新してください。
 </table>
 
-## リモートPCからの操作
+<div style="page-break-before:always"></div>
+
+----
+
+## [4] 操作
+### ①スケジュールの作成
+1. 新規イベントの作成  
+イベント編集パネルの、イベントを追加したい空白の箇所をクリックすると、下記のポップアップが現れます。
+<div><img src="img/fig4b.png" /></div>
+時刻とデューティを入力します。
+
+2. イベントの変更
+イベント編集パネルの、イベントをクリックすると、下記のポップアップが現れ編集が可能となります。  
+なお「削除」ボタンはイベントそのものを削除するので、ご注意ください。
+<div><img src="img/fig4a.png" /></div>
+
+3. スケジュールの実行
+前述の1、2により作成されたスケジュールは、<img src="icons/cwrite.png" height="20" />アイコンをクリックしてドライバーに送信されます。ドライバーは送られたスケジュールを即実行します。
+<table><tr><td width="80"><img src="img/chuui.png" /><td>
+ <img src="icons/cwrite.png" height="20" />アイコンが点滅しているときは、変更されたスケジュールが未送信であることを示しています。変更を取り消し、現在実行中のスケジュールに戻すときは<img src="icons/cread.png" height="20" />アイコンをクリックします。
+</table>
+
+### ②操作一覧
+1. ファイルの操作
+<table>
+<tr><td width="80"><img src="icons/fwrite.png" height="30" /><td>現在のスケジュール表をファイルに保存します。
+<tr><td><img src="icons/fread.png" height="30" /><td>ファイルに保存されたスケジュールを表に読み込みます。操作
+<tr><td width="80"><img src="icons/cwrite.png" height="30" /><td>現在のスケジュール表をドライバーに送信します。
+<tr><td><img src="icons/cread.png" height="30" /><td>現在実行中のスケジュールを表に読み込みます。
+</table>
+
+### ③状態表示一覧
+<table>
+<tr><td width="80"><img src="icons/connect.png" height="30" /><td>ユーザインタフェースはドライバに接続中です。
+<tr><td><img src="icons/disconnect.png" height="30" /><td>ユーザインタフェースはドライバに接続されていません。接続されていないとスケジュールをドライバーへ送信できません。
+</table>
+
+<div style="page-break-before:always"></div>
+
+----
+
+## [5]リモート接続
 1. LAN接続
   リモートPCのから設定する場合は、先にPCのIPアドレスを手動にて設定します。
   以下、PCのアドレスを仮に **192.168.10.10** に設定したとして、説明します。
@@ -56,53 +133,31 @@ PCとアナログ出力BOXの間は、2本のUSBケーブルにて下図のよ�
   Webブラウザ<sup>(1)</sup>にて アドレス **192.168.10.10:8000** に接続します。
   接続されると、前述のユーザインタフェースと同じものが表示されます。同様の操作にて遠隔のドライバーを操作することが出来ます。
 
-## スケジュールの作成
-1. 新規イベントの作成  
-イベント編集パネルの、イベントを追加したい空白の箇所をクリックすると、下記のポップアップが現れます。
-<img src="img/fig4b.png" />
-時刻とデューティを入力します。
 
-2. イベントの変更
-イベント編集パネルの、イベントをクリックすると、下記のポップアップが現れ編集が可能となります。  
-なお「削除」ボタンはイベントそのものを削除するので、ご注意ください。
-<img src="img/fig4a.png" />
+<div style="page-break-before:always"></div>
 
-3. スケジュールの実行
-前述の1、2により作成されたスケジュールは、<img src="LedScheduler/ui/icons/cwrite.png" height="20" />アイコンをクリックしてドライバーに送信されます。ドライバーは送られたスケジュールを即実行します。
-<table><tr><td width="80"><img src="img/chuui.png" /><td>
- <img src="LedScheduler/ui/icons/cwrite.png" height="20" />アイコンが点滅しているときは、変更されたスケジュールが未送信であることを示しています。変更を取り消し、現在実行中のスケジュールに戻すときは<img src="LedScheduler/ui/icons/cread.png" height="20" />アイコンをクリックします。
-</table>
+----
 
-
-## アイコン一覧
-<table>
-<tr><td width="80"><img src="LedScheduler/ui/icons/fwrite.png" height="30" /><td>現在のスケジュール表をファイルに保存します。
-<tr><td><img src="LedScheduler/ui/icons/fread.png" height="30" /><td>ファイルに保存されたスケジュールを表に読み込みます。
-<tr><td><img src="LedScheduler/ui/icons/cwrite.png" height="30" /><td>現在のスケジュール表をドライバーに送信します。
-<tr><td><img src="LedScheduler/ui/icons/cread.png" height="30" /><td>現在実行中のスケジュールを表に読み込みます。
-<tr><td><img src="LedScheduler/ui/icons/connect.png" height="30" /><td>ユーザインタフェースはドライバに接続中です。
-<tr><td><img src="LedScheduler/ui/icons/disconnect.png" height="30" /><td>ユーザインタフェースはドライバに接続されていません。接続されていないとスケジュールをドライバーへ送信できません。
-</table>
-
-### Appendix
-A.1 アナログ出力ボックスのピン割付
+## 補足
+### A.1 アナログ出力ボックスのピン割付
 <img src="img/fig5.png" />
 
-A.2 部品リスト(市販品)
-
-|名称|型式|購入先|
+### A.2 部品リスト
+①市販品
+|名称|型式|メーカ|
 |:---|:---|:---|
-|ノートPC| | 
-|アナログ出力基板|Phidget Analog4Out|ロボショップ|
-|USBケーブル|Type miniB|石丸電気|
+|ノートPC|HP 14s-fq0000|HP| 
+|アナログ出力基板|Analog4Out|Phidget|
+|USBケーブル|Type miniB|汎用品|
 |BNCケーブル|TLBNC-PFRG-1.5D2V-3|ミスミ|
 
-A.3 部品リスト(特注品)
+②特注品
+|名称|型式|購入先|URL|
+|:---|:---|:---|:---|
+|基板ケース|PhidgetCase#2|C.A.labs|---|
+|ソフトウェア|LedScheduler|C.A.labs|https://github.com/KazukiHiraizumi/LedScheduler|
 
-|名称|型式|購入先|
-|:---|:---|:---|
-|基板ケース|PhidgetCase2|C.A.Labs|
-|ソフトウェア|LedScheduler|C.A.Labs|
+<div style="page-break-before:always"></div>
 
-A.4 システム構成
+### A.3 システムブロック図
 <img src="img/fig6.png" />
