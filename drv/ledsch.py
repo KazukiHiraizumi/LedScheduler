@@ -48,6 +48,14 @@ async def callback(websocket):
 
 async def task_ctl():
   print("task_ctl start")
+  if not dac.init():
+    sg.popup('UV-LED調光ドライバー','DAコンバータエラー')
+    sys.exit(101)
+
+  ledctl.init(dac)
+  print('schedule loaded',schedule)
+  ledctl.setsch(schedule)
+
   while True:
     if not ledctl.update():
       feat_com.set_result('Stopped')
@@ -63,20 +71,12 @@ async def task_com():
   print("task_com stopped")
 
 #########################################################################
-if not dac.init():
-  sg.popup('UV-LED調光ドライバー','DAコンバータエラー')
-  sys.exit(101)
-
-ledctl.init(dac)
-
 try:
   with open('settings.json', 'r') as f:
     schedule=json.load(f)
 except Exception as e:
   schedule=[]
 
-print('schedule loaded',schedule)
-ledctl.setsch(schedule)
 
 feat_com=asyncio.Future()
 loop=asyncio.get_event_loop()

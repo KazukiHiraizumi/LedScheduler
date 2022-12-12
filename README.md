@@ -18,13 +18,21 @@ pip install websocket
 pip install PySimpleGUI
 ~~~
 
-3. Phidget(DAコンバータ)
+
+4. Phidget(DACドライバー)
+~~~
+curl -fsSL https://www.phidgets.com/downloads/setup_linux | sudo -E bash -
+sudo apt update
+sudo apt install libphidget22 install -y libphidget22
+~~~
+
+5. Phidget(DAC API)
 ~~~
 pip install Phidget22
 ~~~
 
-4. browser-fs-access(JS)
-5. jquery-ui-1.13.2(JS)
+6. browser-fs-access(JS)
+7. jquery-ui-1.13.2(JS)
 
 ## ディレクトリ構造
 追加パッケージ(JS)は以下のように配置します。
