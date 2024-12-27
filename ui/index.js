@@ -14,7 +14,7 @@ $('button').on('mouseleave',function(ev){
 });
 
 let appData={
-  headers: ['CH0','CH1','CH2','CH3','CH4','CH5','CH6','CH7'],
+  headers: ['0','1','2','3','4','5','6','7'],
   cardTemplate: '<div>${value}%</div>',
   lineHeight: 20,
 }

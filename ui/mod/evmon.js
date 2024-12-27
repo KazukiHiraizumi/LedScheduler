@@ -7,6 +7,8 @@ function renderPanel(elm,headers){
   let div = $('<div></div>');
   pvContainer = div.clone().addClass('skeduler-headers');
   svContainer = div.clone().addClass('skeduler-headers');
+  pvContainer.append($('<div style="font-size:0.7em;">現在値</div>'));
+  svContainer.append($('<div style="font-size:0.7em;">強制出力</div>'));
   headers.forEach(function (element) {
     let pv=div.clone();
     let disp=div.clone();
@@ -46,6 +48,7 @@ function checkPanel(){
 function renderHeading(elm,headers){
   let div = $('<div></div>');
   let headerContainer = div.clone().addClass('skeduler-headers');
+  headerContainer.append($('<div>CH</div>'));
   headers.forEach(function (element) {
     div.clone().text(element).appendTo(headerContainer);
   }, this);

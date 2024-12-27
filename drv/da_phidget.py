@@ -2,7 +2,8 @@ from Phidget22 import Phidget as device
 from Phidget22.Devices import VoltageOutput as dac
 import time
 
-Serials=[590215,589305]    #Board serial number
+#Serials=[590215,589305]    #Board serial number
+Serials=[717149]
 Calib=5/100.0 #Calibraion
 
 Values=[0]*len(Serials)*4

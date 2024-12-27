@@ -32,7 +32,15 @@ pip install Phidget22
 ~~~
 
 6. browser-fs-access(JS)
+~~~
+git clone https://github.com/GoogleChromeLabs/browser-fs-access.git
+~~~
+
 7. jquery-ui-1.13.2(JS)
+~~~
+git clone https://github.com/jquery/jquery-ui.git
+~~~
+
 
 ## ディレクトリ構造
 追加パッケージ(JS)は以下のように配置します。

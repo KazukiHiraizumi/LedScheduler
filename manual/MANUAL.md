@@ -8,7 +8,7 @@
     margin-top: 300px;
   }
 </style>
-<div style="float:right"> 2022.12<img src="img/sakana.png" height="25"/></div>
+<div style="float:right">C.A.labs.<img src="img/sakana.png" height="25"/></div>
 
 <h1>UV-LED調光システム 取扱説明書</h1>
 <br>
@@ -26,9 +26,9 @@
 <div>
 <table>
 <tr><th>版数<th>発行日<th>発行者<th width="50%">内容</tr>
-<tr><td>第1版<td>2022.12.20<td>C.A.labs.<td>初版</tr>
-<tr><td>-<td><td></tr>
-<tr><td>-<td><td></tr>
+<tr><td>1<td>2022.12.20<td>C.A.labs.<td>初版</tr>
+<tr><td>-<td><td><td></tr>
+<tr><td>-<td><td><td></tr>
 </table>
 </div>
 
@@ -75,6 +75,9 @@
 ### ②BNCケーブルの接続
 アナログ出力ボックスの端子台にBNCケーブルを固定します。端子台のピン割付はAppendix.1を参考にしてください。
 
+<img src="img/fig2.png" />
+
+
 <div style="page-break-before:always"></div>
 
 ----
@@ -82,10 +85,7 @@
 ##  [3] システムの起動
 
 ### ①PCの起動  
-  PCの電源SWを入れて起動します。初期アカウントは以下に設定しています。
-  - アカウント：naro
-  - パスワード：naro
-  - PIN：6267
+  PCの電源SWを入れて起動します。
 ### ②ドライバーの起動
   アナログ出力制御を行うソフトウェアを「ドライバー」とよびます。
   <div><img src="img/StartIcon.png" /></div>
