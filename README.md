@@ -31,31 +31,42 @@ sudo apt install libphidget22 install -y libphidget22
 pip install Phidget22
 ~~~
 
-6. browser-fs-access(JS)
+6. browser-fs-access(JS)  
+ui/...に展開
 ~~~
 git clone https://github.com/GoogleChromeLabs/browser-fs-access.git
 ~~~
 
-7. jquery-ui-1.13.2(JS)
+7. jquery-ui(JS)  
+以下からダウンロード
 ~~~
-git clone https://github.com/jquery/jquery-ui.git
+https://jqueryui.com/download/#!version=1.13.3
 ~~~
+ui/...に展開して名前を変更
+
+> jquery-ui-1.13… ⇒ jquery-ui
 
 
-## ディレクトリ構造
-追加パッケージ(JS)は以下のように配置します。
+
+## ファイル構造
+ui下は以下のファイルがあることを確認します。  
 <img src="img/fig1.png" />
 
-## テスト  
-1. ポート8000でHttpd起動
+## 起動(Windows)
+1. バッチファイルStartDriver.batを起動
+2. ブラウザーでhttp://localhost:8000/index.htmlに接続
+
+## 起動(Linux)
+1. uiにてHttpdをポート8000で起動
 ~~~
+cd ui
 python -m http.server 8000
 ~~~
 2. ドライバー起動
 ~~~
-python drv/ledsch.py
+python ../drv/ledsch.py
 ~~~
-3. ブラウザーでhttp://localhost:8000/ui/index.htmlに接続
+3. ブラウザーでhttp://localhost:8000/index.htmlに接続
 
 
 ## プロトコル  
