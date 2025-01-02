@@ -31,6 +31,7 @@ def init():
       dev.setChannel(n)
       dev.openWaitForAttachment(5000)
       Dacs[base+n]=dev
+  print("DAC",Dacs);
   return True
 
 def channels():
@@ -39,11 +40,17 @@ def channels():
 def set(ch,val):
   global Values
   v=float(val)
-  Values[ch]=v
-  Dacs[ch].setVoltage(Calib*v)
+  try:
+    Values[ch]=v
+    Dacs[ch].setVoltage(Calib*v)
+  except Exception:
+    pass
 
 def get(ch):
-  return Values[ch]
+  try:
+    return Values[ch]
+  except Exception:
+    return 0
 
 #init()
 #

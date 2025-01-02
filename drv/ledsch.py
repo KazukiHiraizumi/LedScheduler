@@ -5,7 +5,8 @@ import websockets
 import json
 import sys
 import time
-import PySimpleGUI as sg
+#import PySimpleGUI as sg
+import TkEasyGUI as sg
 import ledctl
 import da_phidget as dac
 

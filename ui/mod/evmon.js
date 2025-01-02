@@ -28,18 +28,22 @@ function renderPanel(elm,headers){
 function updatePanel(data){
   if(tm_turnoff!=null) clearTimeout(tm_turnoff);
   data.forEach(function(ev){
-    pvContainer.children().eq(ev.column).text(ev.value+' %');
+    pvContainer.children().eq(ev.column+1).text(ev.value+' %');
   });
 }
 
 function checkPanel(){
   let events=[];
   svContainer.children().each(function(n,elm){
-    let contents=$(elm).children();
-    let flag=contents.eq(0).prop('checked');
-    let val=contents.eq(1).val();
-    if(flag){
-      events.push({column:n,value:val});
+    console.log("checkPanel ent "+n);
+    if(n>0){
+      let contents=$(elm).children();
+      let flag=contents.eq(0).prop('checked');
+      let val=contents.eq(1).val();
+      if(flag){
+//        console.log("checkPanel "+n+" "+val);
+        events.push({column:n-1,value:val});
+      }
     }
   });
   return events;

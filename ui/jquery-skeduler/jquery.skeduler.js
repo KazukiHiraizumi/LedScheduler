@@ -225,6 +225,26 @@
       console.timeEnd('skeduler');
     }
 
-    return skedulerEl;
+/*   setTimeout(function(){
+     var ofs=scheduleEl.offset();
+     var wid=scheduleEl.width();
+     var hig=getCardTopPosition(24)-getCardTopPosition(0);
+     console.log('width'+wid+' '+hig);
+     var tlcan=$('<canvas style="position:relative;" id="tlcan"></canvas>');
+     scheduleEl.append(tlcan);
+     tlcan.offset(ofs);
+     tlcan.width=wid;
+     tlcan.height=hig;
+     var c = document.getElementById("tlcan");
+     var ctx = c.getContext("2d");
+     var date=new Date();
+     var tm=date.getHours()+date.getMinutes()/60;
+     var pos=getCardTopPosition(tm);
+     console.log('canvas draw '+tm+' '+pos);
+     ctx.moveTo(0, 0);
+     ctx.lineTo(wid, hig);
+     ctx.stroke();
+    },1000);*/
+   return skedulerEl;
   };
 }(jQuery));

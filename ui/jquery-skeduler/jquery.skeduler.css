@@ -10,7 +10,7 @@
 .skeduler-headers {
   border-left: 1px solid #b0cee9;
   display: flex;
-  padding-left: 60px;
+//  padding-left: 60px;
   position: relative;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .skeduler-headers > div {
-  flex: 0 0 110px;
+  flex: 0 0 113px;
   height: 30px;
   padding-top: 10px;
   background-color: #D3E0EF;
@@ -33,9 +33,15 @@
   text-align: center;
 }
 
+.skeduler-headers > div:first-child{
+  flex: 0 57px;
+  background-color: #FFFFFF;
+  position: relative;
+}
+
 .skeduler-headers > div:last-child,
 .skeduler-main-body > div > div.skeduler-cell  {
-  border-right: 1px solid #B0CEE9;
+  border-right: 4px solid #B0CEE9;
 }
 
 .skeduler-main {

@@ -2,7 +2,8 @@
 
 import time
 import datetime
-import PySimpleGUI as sg
+#import PySimpleGUI as sg
+import TkEasyGUI as sg
 
 def init(dac): #DAコンをセット内包表記内包表記
   global dacon,stamps,schedule,layout,window
@@ -19,7 +20,10 @@ def init(dac): #DAコンをセット内包表記内包表記
   window = sg.Window('ドライバー', layout)
 
 def override(ch,val):  #強制出力
-  stamps[ch]=time.time()  
+  try:
+    stamps[ch]=time.time()
+  except Exception:
+    pass
   dacon.set(ch,val)
 
 def setsch(sch):  #スケジュール更新
